@@ -1,6 +1,5 @@
 import { create } from 'zustand';
 
-
 const useUpload = create((set) => ({
     isOpen: false,
     onOpen: () => set({isOpen: true}),

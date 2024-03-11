@@ -8,9 +8,9 @@ function ThemeProvider( {children} ) {
 
     useEffect(() => {
         if (isDark) {
-            document.querySelector('body').setAttribute('data-theme', 'dark')
-        } else {
             document.querySelector('body').setAttribute('data-theme', 'light')
+        } else {
+            document.querySelector('body').setAttribute('data-theme', 'dark')
         }
     },[isDark])
 

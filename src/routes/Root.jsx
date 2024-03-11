@@ -1,14 +1,16 @@
+import {Outlet} from 'react-router-dom'
+import { useNavigation } from 'react-router-dom'
 
-import {Outlet} from 'react-router-dom';
-import "../index.css"
+import Head from '../components/Head'
+import LoadingScreen from '../components/LoadingScreen'
 
 const Root = () => {
-  //const onUploadClick = () => {
-  //    return uploadModel.onOpen();
-  //}
+  const navigate = useNavigation();
+  console.log(navigate.state)
   return (
     <div>
-      <Outlet/>
+      <Head />
+      {navigate.state === "loading" ? <LoadingScreen /> : <Outlet/> }
     </div>
   )
 }

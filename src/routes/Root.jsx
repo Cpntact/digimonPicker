@@ -6,7 +6,6 @@ import LoadingScreen from '../components/LoadingScreen'
 
 const Root = () => {
   const navigate = useNavigation();
-  console.log(navigate.state)
   return (
     <div>
       <Head />

@@ -29,7 +29,7 @@ body
     --input-color: #9a97f3
 }
 
-input, switch {
+input, switch, #txtsearch {
     background-color: var(--input-color);
     color: var(--font-color);
 }

@@ -15,7 +15,9 @@ import ToastProvider  from "./providers/ToastProvider";
 import ModelProvider from "./providers/ModelProvider";
 
 import "./index.css";
-import {loader as infoLoader}from "./routes/InfoPage";
+
+import { loader as infoLoader } from "./routes/InfoPage";
+import { loader as listLoader } from "./routes/ListShadow";
 
 
 
@@ -31,6 +33,7 @@ const router = createBrowserRouter([
         {
           path: '/list/shadow',
           element: <ListShadow />,
+          loader: listLoader,
         },
         {
           path:'/info/:digimon',

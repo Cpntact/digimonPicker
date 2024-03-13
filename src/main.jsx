@@ -9,6 +9,7 @@ import Root from "./routes/Root";
 import ListShadow from "./routes/ListShadow";
 import ErrorPage from "./routes/ErrorPage";
 import InfoPage from "./routes/InfoPage";
+import ScorePage from "./routes/ScorePage";
 
 import {ThemeProvider} from "./providers/useTheme";
 import ToastProvider  from "./providers/ToastProvider";
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
           path:'/info/:digimon',
           element: <InfoPage />,
           loader: infoLoader,
+        },
+        {
+          path: '/list/score',
+          element: <ScorePage />,
         }
       ]
       }

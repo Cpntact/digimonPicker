@@ -11,7 +11,6 @@ import uniqid from 'uniqid'
 const UploadModel = () => {
     const uploadModel = useUpload();
     const [isLoading, setIsLoading] = useState(false);
-
     const {
         register,
         handleSubmit,

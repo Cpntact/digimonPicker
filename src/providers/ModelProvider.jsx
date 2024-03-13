@@ -1,3 +1,4 @@
+import ScoreModel from "../components/ScoreModel";
 import UploadModel from "../components/UploadModel";
 import { useEffect, useState } from "react";
 
@@ -15,6 +16,7 @@ const ModelProvider = () => {
     return (
         <>
             <UploadModel />
+            <ScoreModel />
         </>
     )
 }

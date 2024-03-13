@@ -6,6 +6,7 @@ const levels = {
     "Child": 2,
     "Adult": 3,
     "Armor": 3,
+    "Hybrid": 3,
     "Perfect": 4,
     "Ultimate": 5,
     
@@ -30,9 +31,10 @@ const getEvolution = async (data) => {
         temp = temp.filter(x => x !== -1);
         temp.map(digimon => {
             if (digimon.levels.length === 0) return null;
-            const level = levels[digimon.levels[0].level];
+            const max = Math.max(...data.levels.map(e => levels[e.level]));
+            const maxEvolution = Math.max(...digimon.levels.map(e => levels[e.level]));
             const attributefiltered = digimon.attributes.filter(e => e.attribute === data.attributes[0].attribute);
-            if (levels[data.levels[0].level] + 1 === level && attributefiltered.length) {
+            if (max + 1 == maxEvolution && attributefiltered.length) {
                 returnArr.push({
                     name: digimon.name,
                     image: digimon.images[0].href,

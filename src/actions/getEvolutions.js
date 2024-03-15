@@ -34,7 +34,7 @@ const getEvolution = async (data) => {
             const max = Math.max(...data.levels.map(e => levels[e.level]));
             const maxEvolution = Math.max(...digimon.levels.map(e => levels[e.level]));
             const attributefiltered = digimon.attributes.filter(e => e.attribute === data.attributes[0].attribute);
-            if (max + 1 == maxEvolution && attributefiltered.length) {
+            if (max + 1 == maxEvolution) {
                 returnArr.push({
                     name: digimon.name,
                     image: digimon.images[0].href,

@@ -5,7 +5,7 @@ function InfoCard({data}) {
     <div className='grid grid-cols-3'>
         <div>
             <h1>Description</h1>
-            <p className='pt-10'>{description[0].description}</p>
+            <p className='pt-10 leading-8'>{description[0].description}</p>
         </div>
 
         <div className='flex flex-col items-center'>
@@ -28,16 +28,23 @@ function InfoCard({data}) {
             </div>
         </div>
         <div className='flex flex-col items-center'>
-            <h1>Skills</h1>
-            <div className='grid grid-cols-2 grid-rows-2 pt-10'>
+            <h1 className="font-bold text-3xl">Skills</h1>
+            <div className='grid grid-cols-2 grid-rows-2 pt-10 gap-4'>
             {data.skills.slice(-4).map(e => {
                 return (
-                <div className='flex flex-col items-start' key={e.skill}>
-                    <h2>{e.skill}</h2>
-                    <p>{e.description}</p>
+                <div className='flex flex-col items-start gap-4 pl-4 pr-4 border-2 border-black rounded-lg' key={e.skill}>
+                    <h2 className="pt-4 font-bold">{e.skill}</h2>
+                    <p className="leading-6 pb-4">{e.description}</p>
                 </div>
-            )})
-            }
+            )})}
+            </div>
+            <h1 className="font-bold text-3xl mt-2">Fields</h1>
+            <div className="flex flex-row w-full justify-evenly ">
+            {data.fields.map(e => {
+                return (
+                    <img className="pl-4 pr-4 mt-6" src={e.image}></img>
+                )
+            })}
             </div>
         </div>
     </div>

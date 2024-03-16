@@ -1,6 +1,6 @@
 import getDigimon from "./getDigimon";
 
-const levels = {
+export const LEVELS = {
     "Baby I": 0,
     "Baby II": 1,
     "Child": 2,
@@ -15,6 +15,7 @@ const levels = {
 const getEvolution = async (data) => {
     const returnArr = [];
     let temp = [];
+    if (data.nextEvolutions.length === 0 || data.levels.length == 0) return [];
     if (data.levels[0].id == 4) {
        data.nextEvolutions.forEach(e => {
            returnArr.push({
@@ -31,9 +32,8 @@ const getEvolution = async (data) => {
         temp = temp.filter(x => x !== -1);
         temp.map(digimon => {
             if (digimon.levels.length === 0) return null;
-            const max = Math.max(...data.levels.map(e => levels[e.level]));
-            const maxEvolution = Math.max(...digimon.levels.map(e => levels[e.level]));
-            const attributefiltered = digimon.attributes.filter(e => e.attribute === data.attributes[0].attribute);
+            const max = Math.max(...data.levels.map(e => LEVELS[e.level]));
+            const maxEvolution = Math.max(...digimon.levels.map(e => LEVELS[e.level]));
             if (max + 1 == maxEvolution) {
                 returnArr.push({
                     name: digimon.name,

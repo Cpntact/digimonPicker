@@ -2,7 +2,6 @@ import useDisplayScore from "../hooks/useDisplayScore";
 
 import Model from "./Model"
 import {LEN} from "../actions/getOptions";
-import { useNavigate } from "react-router-dom";
 
 function ScoreModel({score}) {
     const displayScore = useDisplayScore();

@@ -1,9 +1,7 @@
+import translateName from "./translateName";
 async function getCardImages(name) {
-    if (name.includes("Omega ")) {name = name.replace("Omega ", "Omni")}
-    if (name.includes("Shine ")) {name = name.replace("Shine ", "Shine")}
-    if (name.includes("Omega")) {name = name.replace("Omega", "Omni")}
-    name = name.replace(/\(.*?\)/g, "");
-    const apiUrl = `https://digimoncard.io/api-public/search.php?n=${name}&series=Digimon Card Game`;
+    name = translateName(name);
+    const apiUrl = `https://digimoncard.io/api-public/search.php?n=${name}&series=Digimon Card Game&sort=code`;
     try {
       const response = await fetch(apiUrl);
       const data = await response.json();

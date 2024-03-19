@@ -9,6 +9,7 @@ import ScoreBoard from "../components/ScoreBoard";
 import SelectionCard from "../components/SelectionCard";
 import Image from "../components/Image";
 
+
 export const loader = () => {
   return getOptions();
 }
@@ -22,16 +23,20 @@ function ListShadow() {
     if (e.target.value == loader[currPage].correct) {
       setScore(score + 1);
     }
-    if (currPage == (LEN - 1)) {      
-      navigate('/list/score', {state: {score: score, data:loader}});
+    if (currPage == (LEN - 1)) {
+      let finalScore = score;
+      if (e.target.value == loader[currPage].correct) {
+        finalScore = score + 1;
+      }
+      navigate('/list/score', {state: {score: finalScore, data:loader}});
     }
     setCurrPage(currPage + 1);
   }
   return (
       <div>
-        <div className="grid grid-cols-3 gap-x-4">
-        <div>Empty for Now</div>
-        <Image src={loader[currPage].publicUrl} />
+        <div className="grid grid-cols-3 gap-x-4 mt-10 mb-10">
+        <div>Options</div>
+        <Image src={loader[currPage].publicUrl} className="border-2 border-black" />
         <ScoreBoard score={score}/>
         </div>
         <SelectionCard loader={loader[currPage]} handleNext={myHandleNext} />

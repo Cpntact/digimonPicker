@@ -8,10 +8,10 @@ function CardPage({cards}) {
         displayCard.onOpen();
     }
   return (
-    <div className="grid grid-cols-5">
+    <div className="grid grid-cols-5 gap-4">
       {cards.map((e, index) => {
-        return (<button onClick={handleOnClick} value={e}>
-            <img src={e} key={index}></img>
+        return (<button key={index} onClick={handleOnClick} value={e}>
+            <img className="hover:scale-110 transition" src={e}></img>
         </button>)
       })}
       </div>

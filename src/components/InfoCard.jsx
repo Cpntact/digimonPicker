@@ -11,7 +11,7 @@ function InfoCard({data}) {
 
         <div className='flex flex-col items-center'>
             <h1 className="font-bold text-3xl">{data.name}</h1>
-            <img className="rounded-lg mt-4 mb-4 border-2 border-black" src={data.images[0].href}></img>
+            <img className="rounded-lg mt-4 mb-4 border-2" src={data.images[0].href}></img>
             <div className='grid grid-cols-3 gap-x-5 justify-center items-center text-center'>
                 <div>
                     <h2 className="mb-2">Level</h2>
@@ -33,7 +33,7 @@ function InfoCard({data}) {
             <div className='grid grid-cols-2 grid-rows-2 pt-10 gap-4' style={{gridTemplateColumns: `repeat(auto-fit, minmax(${data.skills.slice(-4).length < 4 ? '100%' : 'auto'}, 1fr))`}}>
             {data.skills.slice(-4).map(e => {
                 return (
-                <div className='flex flex-col items-start gap-4 pl-4 pr-4 border-2 border-black rounded-lg' key={e.skill}>
+                <div className='flex flex-col items-start gap-4 pl-4 pr-4 border-2 rounded-lg'id="skill" key={e.skill}>
                     <h2 className="pt-4 font-bold">{e.skill}</h2>
                     <p className="leading-6 pb-4">{e.description == " " ? "No available description": e.description}</p>
                 </div>

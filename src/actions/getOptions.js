@@ -26,7 +26,6 @@ export async function getOptions () {
 
     })
     await Promise.all(promises);
-    console.log(arr)
     return arr;
 }
 

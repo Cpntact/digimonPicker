@@ -13,6 +13,7 @@ export const LEVELS = {
 }
 
 const getEvolution = async (data) => {
+    console.log(data)
     const returnArr = [];
     let temp = [];
     if (data.nextEvolutions.length === 0 || data.levels.length == 0) return [];

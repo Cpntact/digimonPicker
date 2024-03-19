@@ -18,7 +18,7 @@ export const loader = async ({params}) => {
 function InfoPage() {
   const [data, evolution, cards] = useLoaderData();
   return (
-    <div className='flex flex-col w-full justify-center items-center gap-y-5 mt-10'>
+    <div className='flex flex-col w-full justify-center items-center gap-y-5 mt-10 pr-4 pl-4'>
         <InfoCard data={data}/>
         <NextEvolution evolution={evolution}/>
         <CardPage cards={cards} />
